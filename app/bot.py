@@ -7,8 +7,8 @@ from telegram import ChatAction, InlineKeyboardButton, InlineKeyboardMarkup
 import speech_recognition as sr
 from pydub import AudioSegment
 
-with open("app/res/token.json") as file:
-    token = json.load(file)["token"]
+with open("app/res/token.json") as f:
+    token = json.load(f)["token"]
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
