@@ -71,8 +71,8 @@ def transcribe(update, context):
         with sr.AudioFile(file_path) as source:
             audio = r.record(source)
         text = r.recognize_google(audio, language=context.user_data["language"])
-        logging.info(text)
-
+        #logging.info(text)
+        logging.info(f"[{update.message.from_user.id}: {update.message.from_user.username}]")
         context.bot.send_message(chat_id=update.message.chat_id, text=text)
 
 
