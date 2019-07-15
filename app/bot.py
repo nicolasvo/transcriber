@@ -80,5 +80,6 @@ updater = Updater(token=token, use_context=True)
 dispatcher = updater.dispatcher
 updater.dispatcher.add_handler(CommandHandler('start', start))
 dispatcher.add_handler(CallbackQueryHandler(set_language))
-dispatcher.add_handler(MessageHandler(Filters.forwarded & Filters.voice, transcribe))
+dispatcher.add_handler(MessageHandler(Filters.voice, transcribe))
 updater.start_polling()
+updater.idle()
